@@ -7,9 +7,18 @@ public class Client {
 
 	public static void main(String[] args) {
 		try {
-			String[] messages = {"I like non-blocking servers", "Hello non-blocking world!", "One more message..", "exit"};
+			String[] messages = {"4:-1001-Hindenburg-", "4:-1001-junsen-", "4:-1001-Trynoian-", "4:-9999-Goodbye-"};
 			System.out.println("Starting client...");
 			SocketChannel client = SocketChannel.open(new InetSocketAddress("localhost", 8089));
+
+			int length;
+
+			for (int i = 0; i < messages.length; i++)
+			{
+				length = messages[i].length();
+				String[] arrOfStr = messages[i].split(":");
+				messages[i] = arrOfStr[0]+"-"+String.valueOf(length+2)+arrOfStr[1];
+			}
 
 			for (String msg : messages) {
 				System.out.println("Prepared message: " + msg);
