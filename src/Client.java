@@ -14,11 +14,19 @@ public class Client {
 	private static final int MSG_CHOSEN_CLUE = 1006;
 	private static final int MSG_GIVE_CLUE = 1007;
 	private static final int MSG_PLAYER_DECIDES = 1008;
-	private static final int MSG_TABLE_READY = 1009;
-	private static final int MSG_LETTER_GUESS = 1010;
-	private static final int MSG_ERROR = 1999;
+	private static final int MSG_LETTER_GUESS = 1009;
 
 	private static final int MSG_USER_JOIN = 2001;
+	private static final int MSG_PICK_WORD = 2002;
+	private static final int MSG_PLAYER_READY = 2003;
+	private static final int MSG_TABLE_READY = 2004;
+	private static final int MSG_VALID_CLUE = 2005;
+	private static final int MSG_VOTED = 2006;
+	private static final int MSG_SEND_CLUE = 2007;
+	private static final int MSG_ANAGRAM = 2008;
+	private static final int MSG_NUMBER_OF_LETTERS_RIGHT = 2009;
+
+	private static final int MSG_ERROR = 3001;
 
 	private static int nullread = 0;
 	private static int printnullread = 1;
@@ -114,6 +122,30 @@ public class Client {
 						String str = decodeString(length-12, 12);
 						System.out.println("Received MSG_USER_JOIN " + str);
 						break;
+					}
+					case MSG_PICK_WORD: {
+
+					}
+					case MSG_PLAYER_READY: {
+
+					}
+					case MSG_TABLE_READY: {
+
+					}
+					case MSG_VALID_CLUE: {
+
+					}
+					case MSG_VOTED: {
+
+					}
+					case MSG_SEND_CLUE: {
+
+					}
+					case MSG_ANAGRAM: {
+
+					}
+					case MSG_NUMBER_OF_LETTERS_RIGHT: {
+
 					}
 					case MSG_ERROR: {
 						String str = decodeString(length-12, 12);
