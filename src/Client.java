@@ -54,17 +54,9 @@ public class Client {
 			System.out.println("sendJoin junesen");
 			client.sendStringMsg(MSG_JOIN, "junesen");
 
-			Thread.sleep(2000);
-
-			System.out.println("sendJoin test2");
-			client.sendStringMsg(MSG_JOIN, "test2");
-
-			System.out.println("sendJoin delayed xx");
-			client.sendStringMsgDelay(MSG_JOIN, "xx");
-
-			client.handleRead();
-
-			client.close();
+			while(true) {
+				client.handleRead();
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -124,7 +116,9 @@ public class Client {
 						break;
 					}
 					case MSG_PICK_WORD: {
-
+						String str = decodeString(length-12, 12);
+						System.out.println("Received MSG_PICK_WORD " + str);
+						break;
 					}
 					case MSG_PLAYER_READY: {
 
